@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Calculator</title>
+</head>
+<body>
+    <script>
+        //Take the first value from the client
+        let first_value = prompt("Enter temperature or distance (C/F/KM/M)");
+        //Take what he wants to convert for example if he wants to convert from C to F he type C or c
+        let convert = prompt("Enter what you want to convert in what for exp F for Fahrad to Celcius..etc");
+        
+        if(convert=="F" || convert=="f"){
+            let convert = (parseFloat(first_value)-32)*(5/9);
+                document.write('The temperature in °C is: ' + convert);
+                document.write('<br>How it was calculated? ('+ first_value + '-32)+5/9');
+        }
+
+        else if(convert=="C" || convert=="c"){
+            let convert = parseFloat(first_value);
+                convert=(convert*9)/5;
+                convert=convert+32;
+                document.write('The temperature in °F is: ' + convert);
+                document.write('<br>How it was calculated? '+ first_value + ' Celsius * (9/5)+32' + ' = ' + convert + ('°F'));
+        }
+        else if(convert=="KM" || convert=="km" || convert=="Km" || convert=="kM"){
+            let convert = parseFloat(first_value);
+                convert=(convert/1.609344);
+                document.write('The temperature in miles is: ' + convert);
+                document.write('<br>How it was calculated? '+ convert + 'KM' + '('+ convert + '1.609344) MILES');
+        }
+    
+    </script>
+</body>
+</html>
